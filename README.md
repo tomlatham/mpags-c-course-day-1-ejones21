@@ -6,6 +6,6 @@ A simple command line tool for encrypting/decrypting text using classical cipher
 This will be a section. 
 
 ## Authors
-This will be a different section. 
+
 ## Documentation 
 
