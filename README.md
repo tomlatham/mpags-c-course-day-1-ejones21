@@ -3,7 +3,7 @@ A simple command line tool for encrypting/decrypting text using classical cipher
 
 
 ## How to Install
-This will be a section. 
+This will be another section. 
 
 ## Authors
 
