@@ -1,7 +1,34 @@
 #include <iostream>
 #include <string>
-int main()
+#include <vector>
+int main(int argc, char* argv[])
 {
+  const std::vector<std::string> cmdLineArgs{argv, argv+argc};
+
+  std::cout<<"Number of arguments = "<<"  " <<argc<<std::endl;
+  for (int i{0}; i<cmdLineArgs.size();++i)
+    {
+      if (cmdLineArgs[i]=="-h")
+	{ std::cout<<"You have asked for help. The following could help...Some help text"<<std::endl;
+	}
+      else if (cmdLineArgs[i]=="--help")
+	{ std::cout<<"Some help text"<<std::endl;
+	}
+      else if (cmdLineArgs[i]=="-o")
+	{ std::string output_file {"output file"};
+	  output_file = cmdLineArgs[++i];
+	  std::cout<<"The output file is  "<<output_file<<"\n";
+	}
+      else if (cmdLineArgs[i]=="-i")
+	{ std::string input_file {"input file"};
+	  input_file = cmdLineArgs[++i];
+	  std::cout<<"The input file is  "<<input_file<<"\n";
+	}
+      else if (cmdLineArgs[i]=="--version")
+	{ std::cout<<"This is C++11\n";
+	}
+    }
+
   std::cout<<"Please enter your message and press enter. When finished, press ctrl+D.\n";
   char in_char{'x'};
 
@@ -69,8 +96,9 @@ int main()
       std::cout<<output<<"\n";
     }
   return 0;
+} 
 
-}
+
   // This is a comment
   /* This is a
      multiline comment */
@@ -93,6 +121,16 @@ int main()
   std::cout<<c<<std::endl;
 
   char letter{msg[2]};
-  std::cout<<letter<<"\n";
-
-  return 0; */
+  std::cout<<letter<<"\n"; 
+ 
+  std::vector<double> vec={1.2,3.4,5.6};
+  std::cout<<vec.size()<<std::endl;
+  vec.push_back(7.8);
+  vec.push_back(9.1);
+  std::cout<<vec.size()<<std::endl;
+  vec.pop_back();
+  std::cout<<vec.size()<<std::endl;
+  for (size_t i{0}; i<vec.size();i++)
+    {
+      std::cout<<"Index:"<<i<<"  "<<vec[i]<<std::endl;
+      } */
